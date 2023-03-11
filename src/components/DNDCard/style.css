@@ -1,0 +1,15 @@
+.drop-card{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px 0 gold, 0 3px 10px 0 gold;
+    border-radius: 50px;
+    background-color: #040231;
+    color: white;
+    cursor: pointer;
+    font-size: 40px;
+    position: absolute;
+}

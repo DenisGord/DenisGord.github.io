@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import "./style.css";
 import { arr_RU, words, question } from "./_mock_";
 
-export const  Rebus=()=> {
+export const  Krosvord=()=> {
   const [selectButton, setSelectButton] = useState([]);
   const [letter, setLetter] = useState("");
   const [searchWord, setSearchWord] = useState("");

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css'
 
-export const ReverseButton = ({ text, img, click }) => {
+export const ReverseButton = ({ text, img, click, role }) => {
 
     const [state, setState] = useState(false)
     return (
@@ -16,7 +16,11 @@ export const ReverseButton = ({ text, img, click }) => {
                 <div className='flip-box-front' >
                     {text}
                 </div>
-                <img src={img} className='flip-box-back' alt='img' />
+                <div className='flip-box-back'>
+                    <h2 >{role}</h2>
+                <img src={img}  alt='img' className='flip-box-back-image' />
+
+                </div>
             </div>
         </button>
     );

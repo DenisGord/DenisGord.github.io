@@ -8,16 +8,16 @@ export const AnimalContent = ({ text, image , step, childred, className}) => {
 
                     {text}
                     
-                </p><a href={`#${step}`} > Вперед к приключениям</a>
+                </p>
             </div>
 
 
-            <div className='all-display-block'>
+            {/* <div className='all-display-block'>
                 
                     <a name={step}></a>
                     {childred}
               
-            </div>
+            </div> */}
 
         </div>
     );

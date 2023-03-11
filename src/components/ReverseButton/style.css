@@ -41,10 +41,13 @@
     border-radius: 30px;
     box-shadow: 0 4px 8px 0 rgba(9,9,121,1) , 0 6px 20px 0 rgba(9,9,121,1) ;
     border: 5px solid #00004d;
-
- 
   }
-  
+
+  .flip-box-back-image{
+    height: 60%;
+    border-radius:30px;
+  }
+
   .flip-box-front {
     background-color:white;
     font-family: 'Trocchi', serif; 

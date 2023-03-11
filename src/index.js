@@ -8,21 +8,32 @@ import {
 } from "react-router-dom";
 import "./index.css";
 
-import {Main} from './pages/Main';
+import { Main } from './pages/Main';
+import { Words } from './pages/Words';
+import { Rebus } from './pages/Rebus'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
+    element: <Main />,
   },
-  {path:'/animal',
-  element: <Animal/>
-}
+  {
+    path: '/animal',
+    element: <Animal />
+  },
+  {
+    path: "/words",
+    element: <Words />,
+  },
+  {
+    path: "/rebus",
+    element: <Rebus />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

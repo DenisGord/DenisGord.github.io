@@ -15,7 +15,6 @@ export const Main = () => {
             return { ...obj }
         }))
     }
-console.log(counter)
 
     return (
 

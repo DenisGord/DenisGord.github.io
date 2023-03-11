@@ -2,6 +2,7 @@
     display: flex;
     align-items:center;
     justify-content:space-between;
+    /* position: relative; */
 }
 
 .next-button{
@@ -14,4 +15,19 @@
     position: absolute;
     bottom: 50px;
     right: 50px;
+}
+
+.next-button-center{
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(9,9,121,1) , 0 6px 20px 0 rgba(9,9,121,1) ;
+    border: 5px solid #00004d;
+    border-radius:30px;
+    padding: 20px;
+    background-color:#2117a6;
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
+    bottom:100px
 }
