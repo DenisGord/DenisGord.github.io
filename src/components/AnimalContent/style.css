@@ -1,0 +1,18 @@
+.all-display-block{
+    height: 100Vh;
+    padding: 100px;
+    font-size: 30px;
+    display: flex;
+    align-items:center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.text-wrapper{
+    box-shadow: 0 4px 8px 0 rgba(9,9,121,1) , 0 6px 20px 0 rgba(9,9,121,1) ;
+    border: 5px solid #00004d;
+    border-radius:30px;
+    padding: 20px;
+    background-color:#2117a6;
+    color:white;
+}

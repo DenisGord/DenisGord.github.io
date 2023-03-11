@@ -1,0 +1,36 @@
+
+.wrapper {
+    background: rgb(2,0,36);
+    background: linear-gradient(162deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 15%, rgba(0,212,255,1) 100%);
+     width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.right-wrapper{
+    background: rgb(7,128,9);
+    background: linear-gradient(180deg, rgba(7,128,9,1) 29%, rgba(255,201,0,1) 100%);
+}
+
+.right-wrapper .flip-box-front{
+    box-shadow: 0 4px 8px 0 #e3f417 , 0 6px 20px 0 #e3f417 ;
+    border: 5px solid #003908;
+}
+
+.right-wrapper .flip-box-back{
+    box-shadow: 0 4px 8px 0 #e3f417 , 0 6px 20px 0 #e3f417 ;
+    border: 5px solid #003908;
+}
+
+.button-wrapper {
+    margin-left: 20px;
+}
+
+.flex-wrapper{
+
+display: flex;
+flex-direction: column;
+}

@@ -1,0 +1,46 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .block {
+    background-color: gray;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .input-field {
+    width: 52px;
+    height: 52px;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    position: relative;
+  }
+  
+  .select {
+    border: 5px solid blue;
+  }
+  
+  .color {
+    background-color: blueviolet;
+  }
+  
+  .gold {
+    background-color: gold;
+  }
+  
+  .startButton {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+  }
+  .flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

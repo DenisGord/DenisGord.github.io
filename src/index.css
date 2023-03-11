@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: Luminari, fantasy;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: hidden;
+ 
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+p {
+  white-space: pre-line;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
