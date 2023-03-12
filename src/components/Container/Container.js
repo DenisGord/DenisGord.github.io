@@ -8,7 +8,7 @@ export const Container = ({ left, right, buttonText, url }) => {
         nav(url)
     }
     return (
-        <div className='flex-container'>
+        <div className='flex-container dont-touch-scroll'>
             {left}
 
             {right}

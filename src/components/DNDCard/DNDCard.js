@@ -32,7 +32,7 @@ export const DNDCard = ({ id, letter, x, setConuter, block }) => {
         left: coordinates.x
     };
     const onMouseDown = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         // console.log(coordinates.x,coordinates.y )
         let shiftX = e.touches[0].clientX - coordinates.x;
         let shiftY = e.touches[0].clientY - coordinates.y;

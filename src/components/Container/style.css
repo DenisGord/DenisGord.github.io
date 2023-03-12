@@ -31,3 +31,7 @@
     font-weight: bold;
     bottom:100px
 }
+
+.dont-touch-scroll{
+    touch-action: none;
+}
