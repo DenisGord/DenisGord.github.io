@@ -32,9 +32,10 @@ export const DNDCard = ({ id, letter, x, setConuter, block }) => {
         left: coordinates.x
     };
     const onMouseDown = (e) => {
-        e.preventDefault();
-        let shiftX = e.clientX - coordinates.x;
-        let shiftY = e.clientY - coordinates.y;
+        // e.preventDefault();
+        // console.log(coordinates.x,coordinates.y )
+        let shiftX = e.touches[0].clientX - coordinates.x;
+        let shiftY = e.touches[0].clientY - coordinates.y;
 
         const moveAt = (pageX, pageY) => {
             if (moveRoot) {
@@ -57,7 +58,7 @@ export const DNDCard = ({ id, letter, x, setConuter, block }) => {
 
                         x = left + 12.5
                         y = top + 12.5
-                        window.removeEventListener('mousemove', onMouseMove);
+                        window.removeEventListener('touchmove', onMouseMove);
                         setConuter((prev) => {
                             return prev + 1
                         })
@@ -72,19 +73,19 @@ export const DNDCard = ({ id, letter, x, setConuter, block }) => {
             }
 
         };
-        moveAt(e.clientX, e.clientY);
+        moveAt(e.touches[0].clientX, e.touches[0].clientY);
 
         const onMouseMove = (event) => {
-
-            moveAt(event.clientX, event.clientY);
+            console.log()
+            moveAt(event.touches[0].clientX, event.touches[0].clientY);
 
 
         };
 
-        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('touchmove', onMouseMove);
 
-        window.addEventListener('mouseup', () => {
-            window.removeEventListener('mousemove', onMouseMove);
+        window.addEventListener('touchend', () => {
+            window.removeEventListener('touchmove', onMouseMove);
         });
     };
 
@@ -92,7 +93,8 @@ export const DNDCard = ({ id, letter, x, setConuter, block }) => {
     return (
         <div
             id={id}
-            onMouseDown={onMouseDown}
+            // onMouseDown={onMouseDown}
+            onTouchStart={onMouseDown}
             className='drop-card'
             style={styleTag}
         >

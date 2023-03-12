@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import React from 'react';
 import './style.css'
 export const FlipCard = ({ img, text, state, click }) => {
@@ -16,7 +17,7 @@ export const FlipCard = ({ img, text, state, click }) => {
                     <img src={img} alt='img' className='flip-box-back-image image-new' />
 
                 </div>
-                <div className='flip-box-back'>
+                <div key={nanoid()} className='flip-box-back'>
                     <h2 > {state ? text : '?'}</h2>
                     {state &&
                         <h3>Нажмите на карточку чтобы продолжить</h3>
