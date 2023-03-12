@@ -6,7 +6,7 @@ export const KrosvordComponent = ({ words, question, maxX, maxY, right, counter,
   const [selectButton, setSelectButton] = useState([]);
   const [letter, setLetter] = useState("");
   const [showText, setShowText] = useState(false)
-
+  const [showButton, setShowButton] = useState(false)
   const backgound = (first, second) => {
     if (first && first === second.word.toLowerCase()) {
       if (second.gold) {
@@ -99,10 +99,10 @@ export const KrosvordComponent = ({ words, question, maxX, maxY, right, counter,
           i++
         }
       })
-    
+
       if (i === sel.length) {
-        setShowText(true)
-        setCounter(counter + 1)
+        setShowButton(true)
+
       }
     }
   }, [selectButton]);
@@ -121,18 +121,23 @@ export const KrosvordComponent = ({ words, question, maxX, maxY, right, counter,
               <div>{renderFields}</div>
             </div>
 
+            {showButton ? <button onClick={() => {
+              setShowText(true)
+              setCounter(counter + 1)
+            }} className="next-button-words">Мы готовы</button> :
+              <div className="padding-wrapper">
 
-            <div className="padding-wrapper">
+                <div className="letterContainer">
+                  {renderButton}
+                </div>
 
-              <div className="letterContainer">
-                {renderButton}
+                <button className="next-button-words" onClick={() => clickLetter(" ")}>удалить</button>
+
+
+
               </div>
+            }
 
-              <button className="next-button-words" onClick={() => clickLetter("")}>удалить</button>
-
-
-
-            </div>
 
           </div> : <h1>Вы разгадали все слова, дождитесь вторую команду</h1>}
     </div>

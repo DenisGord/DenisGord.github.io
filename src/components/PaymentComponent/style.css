@@ -6,3 +6,47 @@
     background-color:#2117a6;
     color:white;
 }
+
+.tr{
+    border: 2px solid #00004d;
+    padding: 0 !important;
+    text-align: center;
+}
+.td{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.table-input{
+    width: 200px;
+    height: 50px;
+    border-radius:0;
+    margin: 0;
+    padding: 0;
+    border:0;
+    outline: none;
+    font-size: 20px;
+    text-align: center;
+    background-color:#2117a6;
+    color:white 
+}
+
+.table-input::placeholder{
+    color:rgb(190, 190, 190)
+}
+
+.image-payment{
+height: 300px;
+}
+
+.flex-container-payment{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+}

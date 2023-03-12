@@ -1,12 +1,23 @@
 export const data={
     left: [
-        ['масло', false, '1', false],
-        ['молоко', false, '2', false],
-        [' ', ' ', 'Итого', false],
+        ['масло', 155, '1', 155],
+        ['молоко', 49, '2', 98],
+        [' ', ' ', 'Итого', 253],
     ],
     right: [
-        ['творог', false, '1', false],
-        ['сметана', false, '2', false ],
-        [' ', ' ', 'Итого', false],
+        ['творог', 125, '1', 125],
+        ['сметана', 47, '2', 94 ],
+        [' ', ' ', 'Итого', 219],
+    ]
+}
+
+export const img={
+    left:[
+        'assets/maslo.jpg',
+        'assets/moloko.jpg'
+    ],
+    right:[
+        'assets/tvorog.jpg',
+        'assets/smetana.jpg'
     ]
 }
