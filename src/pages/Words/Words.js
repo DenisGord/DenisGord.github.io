@@ -11,7 +11,7 @@ export const Words = () => {
             right={<WordsComponent data={data.right} right={true} setConuter={setConuter} count={counter}
             />}
             buttonText={counter>1 && 'К следующим испытаниям'}
-
+            url='/rebus'
         />
     );
 };

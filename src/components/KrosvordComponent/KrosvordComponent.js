@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./style.css";
-import { arr_RU, words, question } from "./_mock_";
+import { arr_RU } from "./_mock_";
 
-export const  Krosvord=()=> {
+export const KrosvordComponent = ({ words, question, maxX, maxY, right, counter, setCounter }) => {
   const [selectButton, setSelectButton] = useState([]);
   const [letter, setLetter] = useState("");
-  const [searchWord, setSearchWord] = useState("");
+  const [showText, setShowText] = useState(false)
+
   const backgound = (first, second) => {
     if (first && first === second.word.toLowerCase()) {
       if (second.gold) {
@@ -16,11 +17,12 @@ export const  Krosvord=()=> {
     return "";
   };
 
+
   const renderFields = useMemo(() => {
     const arr = [];
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < maxY; i++) {
       arr.push([]);
-      for (let j = 0; j < 7; j++) {
+      for (let j = 0; j < maxX; j++) {
         const elem = () => {
           if (words.some(({ x, y }) => y === i && x === j)) {
             const findLetter = selectButton
@@ -32,9 +34,9 @@ export const  Krosvord=()=> {
             return (
               <button
                 onClick={() => setLetter(`${j}-${i}`)}
-                className={`input-field ${
-                  letter === `${j}-${i}` && "select"
-                } ${backgound(findLetter, letterWord)} `}
+                id={`field-button-${right ? 'right' : 'left'}`}
+                className={`input-field ${letter === `${j}-${i}` && "select"
+                  } ${backgound(findLetter, letterWord)} `}
               >
                 <div className="startButton">{letterWord.start || ""}</div>
                 {findLetter || ""}
@@ -70,11 +72,7 @@ export const  Krosvord=()=> {
         res[ind].letter = e;
       }
 
-      // res[
-      //   res.findIndex(({ coord }) => {
-      //     return coord === letter;
-      //   })
-      // ].letter = e;
+
       return res;
     });
   };
@@ -83,18 +81,8 @@ export const  Krosvord=()=> {
     return (
       <button
         tabIndex={"-1"}
-        className="btn"
+        className="next-button-words"
         onClick={() => clickLetter(item)}
-        // style={{
-        //   backgroundColor:
-        //     letters[item] === 2
-        //       ? "rgba(135, 51, 138, 1)"
-        //       : letters[item] === 1
-        //       ? "rgba(0, 212, 255, 1)"
-        //       : letters[item] === 0
-        //       ? "rgba(112,96,112,1)"
-        //       : ""
-        // }}
         key={item}
       >
         {item}
@@ -104,22 +92,49 @@ export const  Krosvord=()=> {
 
   useEffect(() => {
     if (selectButton.length === words.length) {
+      const sel = document.querySelectorAll(`#field-button-${right ? 'right' : 'left'}`)
+      let i = 0
+      sel.forEach((item) => {
+        if (item.classList.value.includes('color') || item.classList.value.includes('gold')) {
+          i++
+        }
+      })
+    
+      if (i === sel.length) {
+        setShowText(true)
+        setCounter(counter + 1)
+      }
     }
   }, [selectButton]);
 
   return (
-    <div className="App">
-      <div className="flex-box">
-        <div>{renderFields}</div>
-        <div>
-          {question.map((item) => {
-            return <div>{item}</div>;
-          })}
-        </div>
-      </div>
+    <div className={`wrapper wrapper-words ${right ? 'right-wrapper' : ''}`} >
+      {counter > 1 ? <h1>Вы разгадали все слова, готовы двигаться дальше?</h1> :
+        !showText ?
+          <div className="flex-container flex-container-column">
+            <div className="flex-container flex-container-column">
+              <ul>
+                {question.map((item) => {
+                  return <li className="list-item">{item}</li>;
+                })}
+              </ul>
+              <div>{renderFields}</div>
+            </div>
 
-      {renderButton}
-      <button onClick={() => clickLetter("")}>удалить</button>
+
+            <div className="padding-wrapper">
+
+              <div className="letterContainer">
+                {renderButton}
+              </div>
+
+              <button className="next-button-words" onClick={() => clickLetter("")}>удалить</button>
+
+
+
+            </div>
+
+          </div> : <h1>Вы разгадали все слова, дождитесь вторую команду</h1>}
     </div>
   );
 }

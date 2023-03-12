@@ -11,6 +11,8 @@ import "./index.css";
 import { Main } from './pages/Main';
 import { Words } from './pages/Words';
 import { Rebus } from './pages/Rebus'
+import { Krosvord } from './pages/Krosvord';
+import { Payment } from './pages/Payment';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
   {
     path: "/rebus",
     element: <Rebus />,
+  },
+  {
+    path: '/krosvord',
+    element: <Krosvord />
+  },
+  {
+    path: '/payment',
+    element: <Payment />
   }
 ]);
 
